@@ -17,7 +17,6 @@ class bootstrap {
     "libxml2", 
     "libxml2-dev", 
     "libxslt1-dev", 
-    "ruby2.3",
     "ruby2.3-dev", 
     "build-essential", 
     "libgmp-dev", 
