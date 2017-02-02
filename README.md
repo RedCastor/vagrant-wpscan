@@ -12,7 +12,7 @@ Ensure Vagrant (http://www.vagrantup.com/) and Virutal Box (https://www.virtualb
 
 Open your terminal and run the following commands:
 
-`$ git clone https://github.com/michaelck/vagrant-wpscan.git`
+`$ git clone https://github.com/redcastor/vagrant-wpscan.git`
 
 `$cd vagrant-wpscan`
 
