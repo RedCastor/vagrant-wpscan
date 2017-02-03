@@ -18,7 +18,7 @@ class wpscan {
     command => 'sudo rvm install 2.3.3 && sudo rvm use 2.3.3 --default'
   }
   
-  exec { 'clone-wpscan':
+  exec { 'gem-install':
     require => Class['bootstrap'],
     cwd => '/vagrant/',
     command => 'echo "gem: --no-ri --no-rdoc" > ~/.gemrc && gem install bundler'
