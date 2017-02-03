@@ -16,7 +16,7 @@ class wpscan {
   exec { 'rvm-ruby-install':
     require => Exec['rvm-ruby-source'],
     cwd => '/vagrant/',
-    command => 'sudo apt-get -y install ruby2.3'
+    command => 'sudo apt-get -y update && sudo apt-get -y install ruby2.3 ruby2.3-dev'
   }
   
 
