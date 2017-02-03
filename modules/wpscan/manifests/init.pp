@@ -10,13 +10,13 @@ class wpscan {
   exec { 'rvm-ruby-source':
     require => Exec['get-rvm'],
     cwd => '/home/vagrant/',
-    command => 'source /vagrant/.rvm/scripts/rvm && echo "source /vagrant/.rvm/scripts/rvm" >> ~/.bashrc'
+    command => 'sudo source /vagrant/.rvm/scripts/rvm && echo "source /vagrant/.rvm/scripts/rvm" >> ~/.bashrc'
   }
   
   exec { 'rvm-ruby-install':
     require => Exec['rvm-ruby-source'],
     cwd => '/home/vagrant/',
-    command => 'rvm install 2.3.3 && rvm use 2.3.3 --default'
+    command => 'sudo rvm install 2.3.3 && sudo rvm use 2.3.3 --default'
   }
   
   exec { 'gem-install':
