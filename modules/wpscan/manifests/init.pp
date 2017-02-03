@@ -10,7 +10,7 @@ class wpscan {
   exec { 'rvm-ruby-source':
     require => Class['bootstrap'],
     cwd => '/vagrant/',
-    command => 'source /vagrant/.rvm/scripts/rvm && echo "source /vagrant/.rvm/scripts/rvm" >> ~/.bashrc'
+    command => 'sudo source /vagrant/.rvm/scripts/rvm && echo "source /vagrant/.rvm/scripts/rvm" >> ~/.bashrc'
   }
   
   exec { 'rvm-ruby-install':
