@@ -10,7 +10,7 @@ class wpscan {
   exec { 'rvm-ruby-source':
     require => Exec['get-rvm'],
     cwd => '/home/vagrant/',
-    command => 'sudo source /vagrant/.rvm/scripts/rvm && echo "source /vagrant/.rvm/scripts/rvm" >> ~/.bashrc'
+    command => 'sudo source /home/vagrant/.rvm/scripts/rvm && echo "sudo source /home/vagrant/.rvm/scripts/rvm" >> /home/vagrant/.bashrc'
   }
   
   exec { 'rvm-ruby-install':
@@ -22,7 +22,7 @@ class wpscan {
   exec { 'gem-install':
     require => Exec['rvm-ruby-install'],
     cwd => '/home/vagrant/',
-    command => 'echo "gem: --no-ri --no-rdoc" > /vagrant/.gemrc && sudo gem install bundler'
+    command => 'echo "gem: --no-ri --no-rdoc" > /home/vagrant/.gemrc && sudo gem install bundler'
   }
   
   #clone wpscan
