@@ -8,26 +8,26 @@ class wpscan {
   }
   
   exec { 'rvm-ruby-source':
-    require => Class['bootstrap'],
+    require => Exec['get-rvm'],
     cwd => '/vagrant/',
     command => 'sudo source /vagrant/.rvm/scripts/rvm && echo "source /vagrant/.rvm/scripts/rvm" >> ~/.bashrc'
   }
   
   exec { 'rvm-ruby-install':
-    require => Class['bootstrap'],
+    require => Exec['rvm-ruby-source'],
     cwd => '/vagrant/',
     command => 'sudo rvm install 2.3.3 && sudo rvm use 2.3.3 --default'
   }
   
   exec { 'gem-install':
-    require => Class['bootstrap'],
+    require => Exec['rvm-ruby-install'],
     cwd => '/vagrant/',
     command => 'echo "gem: --no-ri --no-rdoc" > /vagrant/.gemrc && sudo gem install bundler'
   }
   
   #clone wpscan
   exec { 'clone-wpscan':
-    require => Class['bootstrap'],
+    require => Exec['gem-install'],
     cwd => '/vagrant/',
     command => 'git clone https://github.com/wpscanteam/wpscan.git'
   }
