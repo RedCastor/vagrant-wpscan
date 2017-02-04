@@ -24,7 +24,9 @@ class bootstrap {
     "libxml2-dev",
     "libxslt1-dev",
     "ruby-dev",
-    "build-essential"
+    "build-essential",
+    "ruby2.3",
+    "ruby2.3-dev",
   ]
 
   # install packages
