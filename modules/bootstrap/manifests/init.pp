@@ -5,8 +5,14 @@ class bootstrap {
     ensure => 'present'
   }
 
+  # Add brightbox-ruby Repo
+  exec { 'add-brightbox-ruby':
+    command => '/usr/bin/apt-add-repository ppa:brightbox/ruby-ng'
+  }
+  
   # ensure local apt cache index is up to date before beginning
   exec { 'apt-get update':
+    require => Exec['add-brightbox-ruby'],
     command => '/usr/bin/apt-get update'
   }
 
